@@ -1,8 +1,46 @@
 import React from 'react';
-import { Link, NavLink, withRouter } from 'react-router-dom';
-import './topNav.scss';
-import styled from 'styled-components';
+import { NavLink, withRouter } from 'react-router-dom';
+import { Button } from 'semantic-ui-react';
+import { isLoggedIn, removeToken } from '../utils/auth';
+import './styles/topNav.scss';
+// import styled from 'styled-components';
 
+import {
+    COURSE_BASE_URL,
+    LECTURER_BASE_URL,
+    LOGIN_URL,
+    STUDENT_BASE_URL,
+} from '../routes/URLMap';
+
+
+const logout = history => {
+    removeToken();
+    history.push(LOGIN_URL);
+};
+
+const TopNav = ({ history }) => {
+
+    if (!isLoggedIn()) return null;
+
+    return (
+        <nav className="nav-bar">
+            <NavLink className="nav-item" activeClassName="nav-item-active" to={COURSE_BASE_URL}>
+                Courses
+            </NavLink>
+            <NavLink className="nav-item" activeClassName="nav-item-active" to={STUDENT_BASE_URL}>
+                Studnets
+            </NavLink>
+            <NavLink className="nav-item" activeClassName="nav-item-active" to={LECTURER_BASE_URL}>
+                Lectures
+            </NavLink>
+            <Button onClick={() => logout(history)} className="nav-logout">
+                Log out
+            </Button>
+        </nav>
+    );
+};
+
+/*
 const NavContainer = styled.ul`
       display: flex;
       list-style: none;
@@ -11,6 +49,8 @@ const NavContainer = styled.ul`
           text-decoration: none;
       }
 `;
+*/
+
 // color: ${props => props.isRed && 'red'}
 /*
 const NavItem = styled(Link)`
@@ -18,6 +58,8 @@ const NavItem = styled(Link)`
 `
 */
 
+
+/*
 const TopNav = props => {
     console.log(props.match);
     /*
@@ -26,6 +68,7 @@ const TopNav = props => {
     const isOnStudents = path === '/students';
     const isOnLecturers = path === '/lecturers';
     */
+   /*
     return (
         <nav>
             <NavContainer> 
@@ -44,7 +87,9 @@ const TopNav = props => {
             </NavContainer>
         </nav>
         */
-    );
-};
+   // );
+//};
+
+
 
 export default withRouter(TopNav);
