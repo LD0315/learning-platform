@@ -72,13 +72,25 @@ class Courses extends React.Component {
                        ))}
                    </FlexContainer>
                    </segment>
+
+                  {
+                      this.state.pagination.page && (
+                          <FlexContainer justifyContentValue="center">
+                              <Pagination
+                                activePage={this.state.pagination.page}
+                                disabled={this.state.isLoaing}
+                                onPageChange={this.handlePageChange}
+                                totalPages={this.state.pagination.pages}
+                              />
+                          </FlexContainer>
+                      )
+                  } 
                </Container>
            </React.Fragment>
-       )
+       );
    }
 
-
-}
+};
 
 
 /*
