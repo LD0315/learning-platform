@@ -16,7 +16,7 @@ class Courses extends React.Component {
 
         this.state = {
             courses: [],
-            eroor: null,
+            error: null,
             isLoading: false,
             pagination: {},
         };

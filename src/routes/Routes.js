@@ -21,8 +21,8 @@ const Routes = () => {
   return (
     <Switch>
       <Redirect exact from="/" to={COURSE_BASE_URL} />
-      <Route exact path={LOGIN_URL} component={Login} />
-      <ProtectedRoute exact path={COURSE_BASE_URL} component={Courses} />
+      <Route exact path="/login" component={Login} />
+      <ProtectedRoute exact path="/courses" component={Courses} />
       <ProtectedRoute exct path={`${COURSE_BASE_URL}/new`} component={CourseNew} />
       <ProtectedRoute exact path={`${COURSE_BASE_URL}/:id`} component={CourseDetails} />
       <ProtectedRoute exact path={`${COURSE_BASE_URL}/:id/edit`} component={CourseEdit} />

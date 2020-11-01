@@ -15,7 +15,7 @@ const CourseForm = props => {
                     />
                 </Form.Field>
                 <Form.Field>
-                    <label>Coruse Name</label>
+                    <label>Coouse Name</label>
                     <input
                         name="name"
                         onChange={props.handleChange}
