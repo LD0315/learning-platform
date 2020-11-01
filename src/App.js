@@ -16,7 +16,9 @@ function App() {
   return (
     <div>
       <TopNav />
-      <Routes />
+      <main className="container">
+          <Routes />
+      </main>
     </div>
   );
 }

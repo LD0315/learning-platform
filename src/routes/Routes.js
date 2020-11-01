@@ -20,14 +20,14 @@ import {
 const Routes = () => {
   return (
     <Switch>
-      <Redirect exact from="/" to={COURSE_BASE_URL} />
+      <Redirect exact from="/" to="/courses" />
       <Route exact path="/login" component={Login} />
-      <ProtectedRoute exact path="/courses" component={Courses} />
-      <ProtectedRoute exct path={`${COURSE_BASE_URL}/new`} component={CourseNew} />
-      <ProtectedRoute exact path={`${COURSE_BASE_URL}/:id`} component={CourseDetails} />
-      <ProtectedRoute exact path={`${COURSE_BASE_URL}/:id/edit`} component={CourseEdit} />
-      <ProtectedRoute exact path={STUDENT_BASE_URL} component={Students} />
-      <ProtectedRoute exact path={LECTURER_BASE_URL} component={Lectures} />
+      <Route exact path="/courses" component={Courses} />
+      <Route exct path="/courses/new" component={CourseNew} />
+      <Route exact path="/courses/:id" component={CourseDetails} />
+      <Route exact path="/courses/:id/edit" component={CourseEdit} />
+      <Route exact path="/students" component={Students} />
+      <Route exact path="/lecturers" component={Lectures} />
     </Switch>
   )
 }
