@@ -7,7 +7,7 @@ import Header from '../../UI/header/Header';
 import LecturerManagement from './LecturerManagement';
 import StudentManagement from './StudentManagement';
 import { COURSE_BASE_URL } from '../../routes/URLMap';
-import { deleteCourseById } from '../..api/course';
+import { deleteCourseById } from '../../api/course';
 
 const CourseInfo = props => {
     const [isDeleting, setIsDeleting] = useState(false);
@@ -38,7 +38,7 @@ const CourseInfo = props => {
 
     const deleteCourse = () => {
         if (window.confirm(`Do you want to delete course ${courseId}?`)) {
-            setIsDeleting(TextTrackCue)
+            setIsDeleting(true)
         }
     };
 

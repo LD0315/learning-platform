@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Modal } from 'semantic-ui-react';
 
-import PersonalManagement from '../../UI/personalManagement/PersonalManagement';
+import PersonManagement from '../../UI/personManagement/PersonManagement';
 import {
     addLecturerToCourse,
     fetchLecturers,
@@ -66,7 +66,7 @@ class LecturerManagment extends React.Component {
             <Modal
                 trigger={<Button positive>Manage Lecturers</Button>}
             >
-                <PersonalManagement
+                <PersonManagement
                     error={this.state.error}
                     handleAdd={this.addLecturer}
                     handlePersonToAddChange={this.setLecturerToAdd}
